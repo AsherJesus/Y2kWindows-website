@@ -1,0 +1,536 @@
+/* -------------------- RESET / BASE -------------------- */
+body {
+  margin: 0;
+  background: black;
+  color: #00ffcc;
+  font-family: "Courier New", monospace;
+}
+
+/* -------------------- HEADER TEXT -------------------- */
+.content {
+  text-align: center;
+  padding: 20px;
+}
+
+/* -------------------- LOADER -------------------- */
+#loader {
+  position: fixed;
+  inset: 0;
+
+  background: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.glitch {
+  font-size: 2rem;
+  color: #00ffcc;
+
+  text-shadow:
+    2px 0 red,
+    -2px 0 blue;
+
+  animation: glitch 0.8s infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+/* -------------------- BANNER CARD -------------------- */
+.card {
+  width: 100%;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 600px;
+
+  object-fit: cover;
+  display: block;
+}
+
+/* -------------------- PROFILE ROW -------------------- */
+.top-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 15px 20px;
+
+  border-bottom: 1px solid rgba(0,255,255,0.2);
+}
+
+.profile {
+  width: 70px;
+  height: 70px;
+
+  border-radius: 50%;
+  border: 2px solid cyan;
+}
+
+.top-info h3 {
+  color: cyan;
+  font-size: 1.5rem;
+}
+
+/* -------------------- HEADER -------------------- */
+.boot-header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* -------------------- MEDIA GRID -------------------- */
+.media-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 50px;
+  padding: 40px;
+}
+
+/* -------------------- MEDIA TILE -------------------- */
+.media-tile {
+  width: 320px;
+  height: 280px;
+
+  margin: auto;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  border: 2px solid cyan;
+  background: black;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  box-shadow: 0 0 8px rgba(0,255,255,0.3);
+}
+
+/* image fills tile cleanly */
+.media-tile img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+
+  transition: 0.3s ease;
+
+  /* allows container click */
+  pointer-events: none;
+}
+
+/* -------------------- HOVER -------------------- */
+.media-tile:hover {
+  transform: scale(1.03);
+
+  border-color: lime;
+
+  box-shadow:
+    0 0 10px cyan,
+    0 0 20px lime;
+}
+
+.media-tile:hover img {
+  transform: scale(1.04);
+}
+
+/* -------------------- CLICK SHAKE -------------------- */
+.media-tile:active {
+  animation: glitchShake 0.2s;
+}
+
+@keyframes glitchShake {
+  0% { transform: translate(0); }
+  25% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 2px); }
+  75% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+/* -------------------- MUSIC BOX -------------------- */
+.music-box {
+  text-align: center;
+}
+
+/* -------------------- NAV BUTTON -------------------- */
+.nav-bottom {
+  display: flex;
+  justify-content: center;
+
+  margin: 60px 0 30px;
+}
+
+.nav-bottom button {
+  background: black;
+  color: cyan;
+
+  border: 1px solid cyan;
+
+  padding: 10px 20px;
+
+  cursor: pointer;
+
+  font-family: monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  transition: 0.2s;
+}
+
+.nav-bottom button:hover {
+  background: cyan;
+  color: black;
+
+  box-shadow: 0 0 10px cyan;
+}
+
+.nav-bottom button:active {
+  transform: scale(0.95);
+}
+
+/* -------------------- SOUND PANEL -------------------- */
+.sound-panel {
+  margin: 40px auto;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: fit-content;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  border: 1px solid cyan;
+
+  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+}
+
+.sound-panel button {
+  background: black;
+  color: cyan;
+
+  border: 1px solid cyan;
+
+  padding: 10px;
+
+  cursor: pointer;
+
+  font-family: monospace;
+
+  transition: 0.2s;
+}
+
+.sound-panel button:hover {
+  background: cyan;
+  color: black;
+}
+
+/* -------------------- VHS / CRT EFFECT -------------------- */
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,0.01),
+    rgba(255,255,255,0.01) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+
+  z-index: 9998;
+}
+
+body::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: rgba(0,255,200,0.01);
+
+  mix-blend-mode: overlay;
+
+  animation: crtFlicker 4s infinite;
+
+  z-index: 9997;
+}
+
+@keyframes crtFlicker {
+  0%, 100% { opacity: 0.04; }
+  50% { opacity: 0.08; }
+}
+
+/* -------------------- PAGE 2 -------------------- */
+.page2 .nav-bottom {
+  margin-top: 12%;
+}
+
+.page2 #main-content {
+  padding-bottom: 120px;
+}
+
+/* -------------------- SECTION BLOCK -------------------- */
+.section-block {
+  width: 85%;
+
+  margin: 40px auto;
+  padding: 20px;
+
+  text-align: center;
+
+  border: 1px solid cyan;
+
+  background: rgba(0,0,0,0.7);
+
+  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+}
+
+.section-block h2 {
+  margin-bottom: 20px;
+
+  text-align: center;
+
+  color: cyan;
+
+  letter-spacing: 2px;
+}
+
+/* -------------------- CONTACT SECTION -------------------- */
+.contact-section {
+  width: 80%;
+
+  margin: 100px auto 40px;
+
+  text-align: center;
+}
+
+/* -------------------- ENTITY GRID -------------------- */
+.entity-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 40px;
+}
+
+.entity {
+  width: 120px;
+
+  text-align: center;
+}
+
+.entity img {
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+  border: 2px solid cyan;
+
+  object-fit: cover;
+
+  transition: 0.3s;
+}
+
+.entity img:hover {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 0 10px cyan,
+    0 0 20px lime;
+}
+
+.entity p {
+  margin-top: 10px;
+
+  color: cyan;
+  font-size: 0.8rem;
+}
+
+/* -------------------- SIGNAL ROOM -------------------- */
+.signal-room {
+  margin: 0;
+
+  background: black;
+  color: #00ffcc;
+
+  font-family: "Courier New", monospace;
+
+  overflow-x: hidden;
+}
+
+.signal-room::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  background-image: url("https://wallpapercave.com/wp/wp15320129.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  z-index: -1;
+}
+
+/* -------------------- WINDOW CHAIR ROOM -------------------- */
+.window-chair-room {
+  margin: 0;
+
+  background: black;
+  color: #00ffcc;
+
+  font-family: "Courier New", monospace;
+
+  overflow-x: hidden;
+}
+
+.window-chair-room::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  background-image: url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  z-index: -1;
+}
+
+/* -------------------- FISH ROOM -------------------- */
+.fish-room {
+  margin: 0;
+
+  background: black;
+  color: #00ffcc;
+
+  font-family: "Courier New", monospace;
+
+  overflow-x: hidden;
+}
+
+.fish-room::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  background-image: url("https://i.pinimg.com/originals/d1/72/42/d1724245d9cbaa1f066a9c5454072ef2.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  z-index: -1;
+}
+
+/* -------------------- AESTHETIC ROOM -------------------- */
+.aestheticroom {
+  margin: 0;
+
+  background: black;
+  color: #00ffcc;
+
+  font-family: "Courier New", monospace;
+
+  overflow-x: hidden;
+}
+
+.aestheticroom::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  background-image: url("https://f4.bcbits.com/img/a0095916694_5.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  z-index: -1;
+}
+
+/* -------------------- WHITE ROOM -------------------- */
+.whiteroom {
+  margin: 0;
+
+  background: black;
+  color: #00ffcc;
+
+  font-family: "Courier New", monospace;
+
+  overflow-x: hidden;
+} 
+
+.whiteroom::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/478b2430194103.561767bf5c4ce.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  z-index: -1;
+}
+
+/* -------------------- FUTURE ROOM -------------------- */
+.futureroom {
+  margin: 0;
+
+  background: black;
+  color: #00ffcc;
+
+  font-family: "Courier New", monospace;
+
+  overflow-x: hidden;
+}
+
+.futureroom::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/478b2430194103.561767bf5c4ce.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  z-index: -1;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>signal_lost</title>
+
+  <link rel="stylesheet" href="DomainExspansion.css">
+</head>
+
+<body class="signal-room">
+
+    <div class="visual-bg">
+  <!-- 🔥 LOADER -->
+  <div id="loader">
+    <h1 class="glitch" data-text="signal lost...">
+      signal lost...
+    </h1>
+  </div>
+
+  <!-- 🧠 MAIN CONTENT -->
+  <div id="main-content">
+
+    <!-- 📡 HEADER -->
+    <div class="boot-header">
+      <h1>SIGNAL LOST</h1>
+
+      <p>
+        transmission interrupted • archive unstable • recovering fragments...
+      </p>
+    </div>
+
+    <div class="media-grid">
+
+ <!-- 📡 SIGNAL LOST ROOM -->
+<div class="media-tile"
+  onclick="playClick(); goToPage('signal_lost.html')">
+
+  <img
+    src="https://exploringbits.com/wp-content/uploads/2022/01/Aesthetic-boy-pfp-3-238x300.jpg"
+    alt="signal lost">
+
+</div>
+
+    <!-- 💀 SYSTEM LOG -->
+    <div class="section-block">
+
+      <h2>transmission_log</h2>
+
+      <p>
+        signal detected...<br><br>
+
+        source integrity damaged.<br>
+        corrupted fragments recovered.<br><br>
+
+        attempting reconnection...
+      </p>
+
+    </div>
+
+    <!-- 🚀 BACK BUTTON -->
+    <div class="nav-bottom">
+
+      <button
+        onclick="playClick(); goToPage('page2.html')"
+        onmouseenter="playHover()">
+
+        return to archive →
+
+      </button>
+
+    </div>
+
+    <!-- 🎮 SOUND PANEL -->
+    <div class="sound-panel">
+
+      <button onclick="toggleMusic()">
+        🎧 music on/off
+      </button>
+</div>
+
+    <!-- 🔊 SOUND EFFECTS -->
+    <audio id="clickSound">
+      <source src="glass-break.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="hoverSound">
+      <source src="hover.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 🎧 ROOM MUSIC -->
+    <audio id="bgMusic" loop>
+      <source src="ambient.mp3" type="audio/mpeg">
+    </audio>
+
+  </div>
+
+  <!-- ⚙️ SCRIPT -->
+  <script src="max.js"></script>
+
+</body>
+</html>
