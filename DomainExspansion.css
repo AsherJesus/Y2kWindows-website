@@ -534,3 +534,151 @@ body::after {
 
   z-index: -1;
 }
+/* -------------------- TABLETS -------------------- */
+@media screen and (max-width: 1024px) {
+
+  /* banner image */
+  .thumbnail {
+    height: 400px;
+  }
+
+  /* media cards */
+  .media-grid {
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .media-tile {
+    width: 280px;
+    height: 240px;
+  }
+
+  /* section spacing */
+  .section-block {
+    width: 90%;
+  }
+}
+
+/* -------------------- PHONES -------------------- */
+
+@media screen and (max-width: 768px) {
+  
+  /* ---------------- TOP PROFILE ---------------- */
+  .top-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .top-info h3 {
+    font-size: 1.1rem;
+  }
+
+  /* ---------------- BANNER IMAGE ---------------- */
+  .thumbnail {
+    height: 140px;
+  }
+
+  /* ---------------- GLITCH TEXT ---------------- */
+  .glitch {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* ---------------- HEADER ---------------- */
+  .boot-header {
+    padding: 10px;
+  }
+
+  .boot-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .boot-header p {
+    font-size: 0.8rem;
+  }
+
+  /* ---------------- MEDIA GRID ---------------- */
+  .media-grid {
+    grid-template-columns: 1fr;
+    padding: 15px;
+    gap: 20px;
+  }
+
+  /* ---------------- ROOM CARDS ---------------- */
+  .media-tile {
+    width: 100%;
+    max-width: 340px;
+
+    aspect-ratio: 16 / 10;
+
+    margin: 0 auto;
+  }
+
+  /* ---------------- SECTION BLOCKS ---------------- */
+  .section-block {
+    width: 92%;
+    padding: 15px;
+  }
+
+  /* ---------------- SOUND PANEL ---------------- */
+  .sound-panel {
+    width: 85%;
+  }
+
+  /* ---------------- BUTTONS ---------------- */
+  .nav-bottom button,
+  .sound-panel button {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  /* ---------------- ENTITY SYSTEM ---------------- */
+  .entity-grid {
+    gap: 20px;
+  }
+
+  .entity {
+    width: 90px;
+  }
+
+  .entity img {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+/* -------------------- SMALL PHONES -------------------- */
+@media screen and (max-width: 480px) {
+
+  /* smaller room cards */
+  .media-tile {
+    width: 95%;
+    height: 190px;
+  }
+
+  /* loader text */
+  .glitch {
+    font-size: 1rem;
+  }
+
+  /* headers */
+  .boot-header h1 {
+    font-size: 1.1rem;
+  }
+
+  .boot-header p {
+    font-size: 0.7rem;
+  }
+
+  /* entity icons */
+  .entity img {
+    width: 65px;
+    height: 65px;
+  }
+
+  /* sound panel */
+  .sound-panel {
+    width: 90%;
+  }
+}
