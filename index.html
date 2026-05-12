@@ -3,95 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Y2K VHS Home</title>
+  <title>window.exe</title>
 
-  <link rel="stylesheet" href="DomainExspansion.css?v=2">
+  <link rel="stylesheet" href="DomainExspansion.css?v=3">
 </head>
 
 <body>
 
-<!-- 🔥 LOADER -->
 <div id="loader">
   <h1 class="glitch" data-text="loading...">loading...</h1>
 </div>
 
-<!-- 🧠 MAIN CONTENT -->
 <div id="main-content">
 
-  <!-- 📼 HERO CARD -->
   <div class="card" onclick="playClick()">
     <img class="thumbnail" src="https://i.ytimg.com/vi/kweOYIcKZ5o/maxresdefault.jpg">
 
     <div class="top-info">
       <img class="profile" src="profile.jpg">
-      <h3>my digital space</h3>
+      <h3 id="profileTitle">window.exe</h3>
     </div>
   </div>
 
-  <!-- 💿 HEADER -->
   <div class="boot-header">
-    <h1>Y2K SYSTEM ONLINE</h1>
-    <p>breakcore archive • glitch media • digital noise</p>
+    <h1 id="mainTitle">WINDOW.EXE ONLINE</h1>
+    <p id="mainSubtitle">archive system • digital rooms • lost desktop</p>
   </div>
 
-  <!-- 📼 MEDIA GRID -->
+  
+   <!-- ⚙️ SETTINGS BUTTON -->
+   <button id="settingsButton" onclick="toggleSettings(); playClick()" onmouseenter="playHover()">
+  ⚙️ SETTINGS.exe
+</button> 
+  </div>
+
+  <!-- ⚙️ SETTINGS PANEL -->
+  <div class="theme-panel" id="settingsPanel">
+    <h2>SETTINGS.exe</h2>
+
+    <div class="theme-buttons">
+      <button onclick="setTheme('xp')">XP BLUE</button>
+      <button onclick="setTheme('green')">JUNGLE GREEN</button>
+      <button onclick="setTheme('sunset')">SUNSET GOLD</button>
+      <button onclick="setTheme('red')">ERROR RED</button>
+      <button onclick="setTheme('gray')">CRT GRAY</button>
+    </div>
+
+    <h2>LANGUAGE.exe</h2>
+
+    <div class="theme-buttons">
+      <button onclick="setLanguage('en')">ENGLISH</button>
+      <button onclick="setLanguage('ko')">한국어</button>
+      <button onclick="setLanguage('jp')">日本語</button>
+    </div>
+  </div>
+
   <div class="media-grid">
 
-   <div class="media-tile">
+    <div class="media-tile">
       <img src="https://img1.picmix.com/output/pic/normal/8/3/8/9/11869838_166ff.gif">
-      <p>breakcore fragment #02</p>
+      <p id="tileOne">archive fragment #01</p>
     </div>
 
-   <div class="media-tile">
+    <div class="media-tile">
       <img src="https://i.etsystatic.com/25672587/r/il/3461f9/6185508291/il_794xN.6185508291_n90k.jpg">
-      <p>breakcore fragment #02</p>
+      <p id="tileTwo">archive fragment #02</p>
     </div>
 
     <div class="media-tile">
       <img src="https://i.pinimg.com/originals/db/6c/25/db6c257fbbfb451244070c5b15b4f609.gif">
-      <p>static loop #03</p>
+      <p id="tileThree">static loop #03</p>
     </div>
 
   </div>
 
-  <!-- 🚀 NAV BUTTON -->
   <div class="nav-bottom">
-    <button onclick="startMusic(); goToPage('page2.html'); playClick()" onmouseenter="playHover()">
-      enter next vibe →
+    <button id="enterButton" onclick="startMusic(); goToPage('page2.html'); playClick()" onmouseenter="playHover()">
+      enter archive →
     </button>
   </div>
 
-  <!-- 🎮 SOUND PANEL -->
   <div class="sound-panel">
-    <button onclick="toggleMusic()">🎧 music on/off</button>
-    <button onclick="playClick()">💥 glitch sound</button>
+    <button id="musicButton" onclick="toggleMusic()">🎧 music on/off</button>
+    <button id="glitchButton" onclick="playClick()">💥 glitch sound</button>
   </div>
 
 </div>
 
-<!-- 🎧 AUDIO SYSTEMS (ALL CLEANED) -->
-
-<!-- MAIN MUSIC -->
 <audio id="bgMusic" loop>
   <source src="./music.mp3/davihugo-think-break-with-amen-break-amen-think-break-457749.mp3" type="audio/mpeg">
 </audio>
 
-<!-- BOOT SOUND -->
 <audio id="bootSound">
   <source src="./music.mp3/49447089-game-start-317318.mp3" type="audio/mpeg">
 </audio>
 
-<!-- CLICK SOUND -->
 <audio id="clickSound">
   <source src="glass-break.mp3" type="audio/mpeg">
 </audio>
 
-<!-- HOVER SOUND -->
 <audio id="hoverSound">
   <source src="hover.mp3" type="audio/mpeg">
 </audio>
 
-<!-- ⚙️ SCRIPT -->
 <script src="max.js"></script>
 
 </body>
