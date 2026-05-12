@@ -1,9 +1,22 @@
+:root {
+  /* WINDOW.EXE DEFAULT THEME — XP BLUE */
+  --bg-color: #071a4a;
+  --window-color: rgba(10, 45, 130, 0.75);
+  --panel-color: rgba(0, 20, 70, 0.75);
+  --text-color: #ffffff;
+  --accent-color: #00d9ff;
+  --accent-hover: #b6ff00;
+  --border-color: #00d9ff;
+  --shadow-color: rgba(0, 217, 255, 0.35);
+}
+
 /* -------------------- RESET / BASE -------------------- */
 body {
   margin: 0;
-  background: black;
-  color: #00ffcc;
+  background: var(--bg-color);
+  color: var(--text-color);
   font-family: "Courier New", monospace;
+  overflow-x: hidden;
 }
 
 /* -------------------- HEADER TEXT -------------------- */
@@ -16,24 +29,20 @@ body {
 #loader {
   position: fixed;
   inset: 0;
-
-  background: black;
-
+  background: var(--bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
-
   z-index: 9999;
 }
 
+/* -------------------- GLITCH TEXT -------------------- */
 .glitch {
   font-size: 2rem;
-  color: #00ffcc;
-
+  color: var(--accent-color);
   text-shadow:
     2px 0 red,
     -2px 0 blue;
-
   animation: glitch 0.8s infinite;
 }
 
@@ -46,40 +55,38 @@ body {
   100% { transform: translate(0); }
 }
 
-/* -------------------- BANNER CARD -------------------- */
+/* -------------------- BANNER -------------------- */
 .card {
   width: 100%;
 }
 
 .thumbnail {
   width: 100%;
-  height: 600px;
-
+  height: clamp(180px, 45vw, 500px);
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
-/* -------------------- PROFILE ROW -------------------- */
+/* -------------------- PROFILE -------------------- */
 .top-info {
   display: flex;
   align-items: center;
   gap: 12px;
-
   padding: 15px 20px;
-
-  border-bottom: 1px solid rgba(0,255,255,0.2);
+  background: var(--window-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .profile {
   width: 70px;
   height: 70px;
-
   border-radius: 50%;
-  border: 2px solid cyan;
+  border: 2px solid var(--accent-color);
 }
 
 .top-info h3 {
-  color: cyan;
+  color: var(--accent-color);
   font-size: 1.5rem;
 }
 
@@ -87,61 +94,57 @@ body {
 .boot-header {
   text-align: center;
   margin-top: 40px;
+  padding: 10px;
+}
+
+.boot-header h1 {
+  letter-spacing: 4px;
+  color: var(--accent-color);
+}
+
+.boot-header p {
+  opacity: 0.8;
 }
 
 /* -------------------- MEDIA GRID -------------------- */
 .media-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
   padding: 40px;
+  width: 90%;
+  margin: auto;
 }
 
 /* -------------------- MEDIA TILE -------------------- */
 .media-tile {
-  width: 320px;
-  height: 280px;
-
-  margin: auto;
-
+  width: 100%;
+  aspect-ratio: 16 / 10;
   border-radius: 20px;
   overflow: hidden;
-
-  border: 2px solid cyan;
-  background: black;
-
+  border: 2px solid var(--border-color);
+  background: var(--panel-color);
   cursor: pointer;
-
   transition: 0.3s ease;
-
-  box-shadow: 0 0 8px rgba(0,255,255,0.3);
+  box-shadow: 0 0 8px var(--shadow-color);
 }
 
-/* image fills tile cleanly */
 .media-tile img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
   display: block;
-
   transition: 0.3s ease;
-
-  /* allows container click */
   pointer-events: none;
 }
 
 /* -------------------- HOVER -------------------- */
 .media-tile:hover {
   transform: scale(1.03);
-
-  border-color: lime;
-
+  border-color: var(--accent-hover);
   box-shadow:
-    0 0 10px cyan,
-    0 0 20px lime;
+    0 0 10px var(--accent-color),
+    0 0 20px var(--accent-hover);
 }
 
 .media-tile:hover img {
@@ -161,41 +164,29 @@ body {
   100% { transform: translate(0); }
 }
 
-/* -------------------- MUSIC BOX -------------------- */
-.music-box {
-  text-align: center;
-}
-
 /* -------------------- NAV BUTTON -------------------- */
 .nav-bottom {
   display: flex;
   justify-content: center;
-
   margin: 60px 0 30px;
 }
 
 .nav-bottom button {
-  background: black;
-  color: cyan;
-
-  border: 1px solid cyan;
-
-  padding: 10px 20px;
-
+  background: var(--panel-color);
+  color: var(--accent-color);
+  border: 1px solid var(--border-color);
+  padding: 12px 22px;
   cursor: pointer;
-
   font-family: monospace;
   letter-spacing: 2px;
   text-transform: uppercase;
-
   transition: 0.2s;
 }
 
 .nav-bottom button:hover {
-  background: cyan;
+  background: var(--accent-color);
   color: black;
-
-  box-shadow: 0 0 10px cyan;
+  box-shadow: 0 0 10px var(--accent-color);
 }
 
 .nav-bottom button:active {
@@ -206,123 +197,92 @@ body {
 .sound-panel {
   margin: 40px auto;
   padding: 10px;
-
   display: flex;
   flex-direction: column;
-  gap: 8px;
-
+  gap: 10px;
   width: fit-content;
-
-  background: rgba(0, 0, 0, 0.7);
-
-  border: 1px solid cyan;
-
-  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+  background: var(--panel-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 10px var(--shadow-color);
 }
 
 .sound-panel button {
-  background: black;
-  color: cyan;
-
-  border: 1px solid cyan;
-
+  background: var(--bg-color);
+  color: var(--accent-color);
+  border: 1px solid var(--border-color);
   padding: 10px;
-
   cursor: pointer;
-
   font-family: monospace;
-
   transition: 0.2s;
 }
 
 .sound-panel button:hover {
-  background: cyan;
+  background: var(--accent-color);
   color: black;
 }
 
-/* -------------------- VHS / CRT EFFECT -------------------- */
-body::before {
-  content: "";
-
-  position: fixed;
-  inset: 0;
-
-  pointer-events: none;
-
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(255,255,255,0.01),
-    rgba(255,255,255,0.01) 1px,
-    transparent 2px,
-    transparent 4px
-  );
-
-  z-index: 9998;
+/* -------------------- THEME SETTINGS PANEL -------------------- */
+.theme-panel {
+  width: fit-content;
+  margin: 30px auto;
+  padding: 15px;
+  background: var(--panel-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 12px var(--shadow-color);
+  text-align: center;
 }
 
-body::after {
-  content: "";
-
-  position: fixed;
-  inset: 0;
-
-  pointer-events: none;
-
-  background: rgba(0,255,200,0.01);
-
-  mix-blend-mode: overlay;
-
-  animation: crtFlicker 4s infinite;
-
-  z-index: 9997;
+.theme-panel h2 {
+  margin-top: 0;
+  color: var(--accent-color);
+  letter-spacing: 2px;
 }
 
-@keyframes crtFlicker {
-  0%, 100% { opacity: 0.04; }
-  50% { opacity: 0.08; }
+.theme-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
-/* -------------------- PAGE 2 -------------------- */
-.page2 .nav-bottom {
-  margin-top: 12%;
+.theme-buttons button {
+  background: var(--bg-color);
+  color: var(--accent-color);
+  border: 1px solid var(--border-color);
+  padding: 10px 14px;
+  cursor: pointer;
+  font-family: monospace;
+  text-transform: uppercase;
+  transition: 0.2s;
 }
 
-.page2 #main-content {
-  padding-bottom: 120px;
+.theme-buttons button:hover {
+  background: var(--accent-color);
+  color: black;
+  box-shadow: 0 0 10px var(--accent-color);
 }
 
 /* -------------------- SECTION BLOCK -------------------- */
 .section-block {
   width: 85%;
-
   margin: 40px auto;
   padding: 20px;
-
   text-align: center;
-
-  border: 1px solid cyan;
-
-  background: rgba(0,0,0,0.7);
-
-  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+  border: 1px solid var(--border-color);
+  background: var(--panel-color);
+  box-shadow: 0 0 10px var(--shadow-color);
 }
 
 .section-block h2 {
   margin-bottom: 20px;
-
-  text-align: center;
-
-  color: cyan;
-
+  color: var(--accent-color);
   letter-spacing: 2px;
 }
 
-/* -------------------- CONTACT SECTION -------------------- */
+/* -------------------- CONTACT -------------------- */
 .contact-section {
   width: 80%;
-
   margin: 100px auto 40px;
-
   text-align: center;
 }
 
@@ -331,218 +291,110 @@ body::after {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
   gap: 40px;
 }
 
 .entity {
   width: 120px;
-
   text-align: center;
 }
 
 .entity img {
   width: 100px;
   height: 100px;
-
   border-radius: 50%;
-  border: 2px solid cyan;
-
+  border: 2px solid var(--accent-color);
   object-fit: cover;
-
   transition: 0.3s;
 }
 
 .entity img:hover {
   transform: scale(1.08);
-
   box-shadow:
-    0 0 10px cyan,
-    0 0 20px lime;
+    0 0 10px var(--accent-color),
+    0 0 20px var(--accent-hover);
 }
 
 .entity p {
   margin-top: 10px;
-
-  color: cyan;
+  color: var(--accent-color);
   font-size: 0.8rem;
 }
 
-/* -------------------- SIGNAL ROOM -------------------- */
-.signal-room {
-  margin: 0;
+/* -------------------- VHS / CRT EFFECT -------------------- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,0.01),
+    rgba(255,255,255,0.01) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  z-index: 9998;
+}
 
-  background: black;
-  color: #00ffcc;
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(0,255,200,0.01);
+  mix-blend-mode: overlay;
+  animation: crtFlicker 4s infinite;
+  z-index: 9997;
+}
 
-  font-family: "Courier New", monospace;
+@keyframes crtFlicker {
+  0%, 100% { opacity: 0.04; }
+  50% { opacity: 0.08; }
+}
 
-  overflow-x: hidden;
+/* -------------------- ROOMS -------------------- */
+.signal-room::before,
+.window-chair-room::before,
+.fish-room::before,
+.aesthetic-room::before,
+.white-room::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
 }
 
 .signal-room::before {
-  content: "";
-
-  position: fixed;
-  inset: 0;
-
   background-image: url("https://wallpapercave.com/wp/wp15320129.webp");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  z-index: -1;
-}
-
-/* -------------------- WINDOW CHAIR ROOM -------------------- */
-.window-chair-room {
-  margin: 0;
-
-  background: black;
-  color: #00ffcc;
-
-  font-family: "Courier New", monospace;
-
-  overflow-x: hidden;
 }
 
 .window-chair-room::before {
-  content: "";
-
-  position: fixed;
-  inset: 0;
-
   background-image: url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  z-index: -1;
-}
-
-/* -------------------- FISH ROOM -------------------- */
-.fish-room {
-  margin: 0;
-
-  background: black;
-  color: #00ffcc;
-
-  font-family: "Courier New", monospace;
-
-  overflow-x: hidden;
 }
 
 .fish-room::before {
-  content: "";
-
-  position: fixed;
-  inset: 0;
-
   background-image: url("https://i.pinimg.com/originals/d1/72/42/d1724245d9cbaa1f066a9c5454072ef2.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  z-index: -1;
 }
 
-/* -------------------- AESTHETIC ROOM -------------------- */
-.aestheticroom {
-  margin: 0;
-
-  background: black;
-  color: #00ffcc;
-
-  font-family: "Courier New", monospace;
-
-  overflow-x: hidden;
-}
-
-.aestheticroom::before {
-  content: "";
-
-  position: fixed;
-  inset: 0;
-
+.aesthetic-room::before {
   background-image: url("https://f4.bcbits.com/img/a0095916694_5.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  z-index: -1;
 }
 
-/* -------------------- WHITE ROOM -------------------- */
-.whiteroom {
-  margin: 0;
-
-  background: black;
-  color: #00ffcc;
-
-  font-family: "Courier New", monospace;
-
-  overflow-x: hidden;
-} 
-
-.whiteroom::before {
-  content: "";
-
-  position: fixed;
-  inset: 0;
-
+.white-room::before {
   background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/478b2430194103.561767bf5c4ce.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  z-index: -1;
 }
 
-/* -------------------- FUTURE ROOM -------------------- */
-.futureroom {
-  margin: 0;
-
-  background: black;
-  color: #00ffcc;
-
-  font-family: "Courier New", monospace;
-
-  overflow-x: hidden;
-}
-
-.futureroom::before {
-  content: "";
-
-  position: fixed;
-  inset: 0;
-
-  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/478b2430194103.561767bf5c4ce.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  z-index: -1;
-}
 /* -------------------- TABLETS -------------------- */
 @media screen and (max-width: 1024px) {
-
-  /* banner image */
   .thumbnail {
     height: 400px;
   }
 
-  /* media cards */
   .media-grid {
     gap: 30px;
     padding: 30px;
@@ -553,17 +405,13 @@ body::after {
     height: 240px;
   }
 
-  /* section spacing */
   .section-block {
     width: 90%;
   }
 }
 
 /* -------------------- PHONES -------------------- */
-
 @media screen and (max-width: 768px) {
-  
-  /* ---------------- TOP PROFILE ---------------- */
   .top-info {
     flex-direction: column;
     text-align: center;
@@ -573,19 +421,16 @@ body::after {
     font-size: 1.1rem;
   }
 
-  /* ---------------- BANNER IMAGE ---------------- */
   .thumbnail {
     height: 140px;
   }
 
-  /* ---------------- GLITCH TEXT ---------------- */
   .glitch {
     font-size: 1.3rem;
     text-align: center;
     padding: 10px;
   }
 
-  /* ---------------- HEADER ---------------- */
   .boot-header {
     padding: 10px;
   }
@@ -598,42 +443,36 @@ body::after {
     font-size: 0.8rem;
   }
 
-  /* ---------------- MEDIA GRID ---------------- */
   .media-grid {
     grid-template-columns: 1fr;
     padding: 15px;
     gap: 20px;
   }
 
-  /* ---------------- ROOM CARDS ---------------- */
   .media-tile {
     width: 100%;
     max-width: 340px;
-
     aspect-ratio: 16 / 10;
-
     margin: 0 auto;
   }
 
-  /* ---------------- SECTION BLOCKS ---------------- */
   .section-block {
     width: 92%;
     padding: 15px;
   }
 
-  /* ---------------- SOUND PANEL ---------------- */
-  .sound-panel {
+  .sound-panel,
+  .theme-panel {
     width: 85%;
   }
 
-  /* ---------------- BUTTONS ---------------- */
   .nav-bottom button,
-  .sound-panel button {
+  .sound-panel button,
+  .theme-buttons button {
     width: 100%;
     font-size: 0.8rem;
   }
 
-  /* ---------------- ENTITY SYSTEM ---------------- */
   .entity-grid {
     gap: 20px;
   }
@@ -650,19 +489,15 @@ body::after {
 
 /* -------------------- SMALL PHONES -------------------- */
 @media screen and (max-width: 480px) {
-
-  /* smaller room cards */
   .media-tile {
     width: 95%;
     height: 190px;
   }
 
-  /* loader text */
   .glitch {
     font-size: 1rem;
   }
 
-  /* headers */
   .boot-header h1 {
     font-size: 1.1rem;
   }
@@ -671,14 +506,64 @@ body::after {
     font-size: 0.7rem;
   }
 
-  /* entity icons */
   .entity img {
     width: 65px;
     height: 65px;
   }
 
-  /* sound panel */
-  .sound-panel {
+  .sound-panel,
+  .theme-panel {
     width: 90%;
   }
+}
+
+#settingsPanel {
+  display: none;
+}
+
+/* ========================= */
+/* SETTINGS BUTTON FIX */
+/* ========================= */
+
+#settingsButton {
+
+  display: block;
+
+  visibility: visible;
+
+  opacity: 1;
+
+  position: relative;
+
+  z-index: 9999;
+
+  margin: 20px auto;
+
+  padding: 14px 24px;
+
+  background: #111;
+
+  color: cyan;
+
+  border: 2px solid cyan;
+
+  font-size: 1rem;
+
+  font-family: monospace;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 10px cyan;
+
+  transition: 0.2s ease;
+}
+
+#settingsButton::hover {
+
+  background: cyan;
+
+  color: black;
+
+  transform: scale(1.03);
 }
