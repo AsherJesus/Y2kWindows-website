@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>window.exe</title>
 
-  <link rel="stylesheet" href="DomainExspansion.css?v=3">
+  <link rel="stylesheet" href="DomainExspansion.css?v=4">
 </head>
 
 <body>
@@ -16,25 +16,44 @@
 
 <div id="main-content">
 
+  <!-- 📼 HERO CARD -->
   <div class="card" onclick="playClick()">
-    <img class="thumbnail" src="https://i.ytimg.com/vi/kweOYIcKZ5o/maxresdefault.jpg">
 
+    <img
+      class="thumbnail"
+      src="https://i.ytimg.com/vi/kweOYIcKZ5o/maxresdefault.jpg"
+      alt="window.exe banner"
+    >
+
+    <!-- 🔵 TOP BAR -->
     <div class="top-info">
-      <img class="profile" src="profile.jpg">
-      <h3 id="profileTitle">window.exe</h3>
+
+      <div class="top-left">
+        <img
+          class="profile"
+          src="profile.jpg"
+          alt="profile"
+        >
+
+        <h3 id="profileTitle">window.exe</h3>
+      </div>
+
+    <button
+  id="settingsButton"
+  onclick="toggleSettings(); playClick()"
+  onmouseenter="playHover()"
+>
+  <span id="settingsText">
+    ⚙️ SETTINGS.exe
+  </span>
+</button>
     </div>
   </div>
 
+  <!-- 💿 HEADER -->
   <div class="boot-header">
     <h1 id="mainTitle">WINDOW.EXE ONLINE</h1>
     <p id="mainSubtitle">archive system • digital rooms • lost desktop</p>
-  </div>
-
-  
-   <!-- ⚙️ SETTINGS BUTTON -->
-   <button id="settingsButton" onclick="toggleSettings(); playClick()" onmouseenter="playHover()">
-  ⚙️ SETTINGS.exe
-</button> 
   </div>
 
   <!-- ⚙️ SETTINGS PANEL -->
@@ -47,6 +66,9 @@
       <button onclick="setTheme('sunset')">SUNSET GOLD</button>
       <button onclick="setTheme('red')">ERROR RED</button>
       <button onclick="setTheme('gray')">CRT GRAY</button>
+      <button onclick="setTheme('purple')">PURPLE</button>
+       <button onclick="setTheme('cyan')">CYAN</button>
+      
     </div>
 
     <h2>LANGUAGE.exe</h2>
@@ -55,34 +77,51 @@
       <button onclick="setLanguage('en')">ENGLISH</button>
       <button onclick="setLanguage('ko')">한국어</button>
       <button onclick="setLanguage('jp')">日本語</button>
+      <button onclick="setLanguage('es')">ESPAÑOL</button>
     </div>
   </div>
 
+  <!-- 📼 MEDIA GRID -->
   <div class="media-grid">
 
     <div class="media-tile">
-      <img src="https://img1.picmix.com/output/pic/normal/8/3/8/9/11869838_166ff.gif">
+      <img
+        src="https://img1.picmix.com/output/pic/normal/8/3/8/9/11869838_166ff.gif"
+        alt="archive fragment 1"
+      >
       <p id="tileOne">archive fragment #01</p>
     </div>
 
     <div class="media-tile">
-      <img src="https://i.etsystatic.com/25672587/r/il/3461f9/6185508291/il_794xN.6185508291_n90k.jpg">
+      <img
+        src="https://i.etsystatic.com/25672587/r/il/3461f9/6185508291/il_794xN.6185508291_n90k.jpg"
+        alt="archive fragment 2"
+      >
       <p id="tileTwo">archive fragment #02</p>
     </div>
 
     <div class="media-tile">
-      <img src="https://i.pinimg.com/originals/db/6c/25/db6c257fbbfb451244070c5b15b4f609.gif">
+      <img
+        src="https://i.pinimg.com/originals/db/6c/25/db6c257fbbfb451244070c5b15b4f609.gif"
+        alt="static loop"
+      >
       <p id="tileThree">static loop #03</p>
     </div>
 
   </div>
 
+  <!-- 🚪 NAV BUTTON -->
   <div class="nav-bottom">
-    <button id="enterButton" onclick="startMusic(); goToPage('page2.html'); playClick()" onmouseenter="playHover()">
+    <button
+      id="enterButton"
+      onclick="startMusic(); goToPage('page2.html'); playClick()"
+      onmouseenter="playHover()"
+    >
       enter archive →
     </button>
   </div>
 
+  <!-- 🎮 SOUND PANEL -->
   <div class="sound-panel">
     <button id="musicButton" onclick="toggleMusic()">🎧 music on/off</button>
     <button id="glitchButton" onclick="playClick()">💥 glitch sound</button>
