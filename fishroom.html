@@ -15,28 +15,88 @@
 
   <div id="main-content">
 
-    <div class="boot-header">
-      <h1>FISH ROOM</h1>
-      <p>quiet archive • static memory • isolated space</p>
-    </div>
+   <div class="boot-header">
 
-   <!-- 🪟 WINDOW CHAIR ROOM -->
-<div class="media-tile"
-  onclick="playClick(); goToPage('fishroom.html')">
+  <h1>
+    FISH_ROOM
+  </h1>
 
-  <img
-    src="https://i.pinimg.com/originals/d1/72/42/d1724245d9cbaa1f066a9c5454072ef2.jpg"
-    alt="window chair room">
+  <p>
+    water light • quiet bubbles • soft blue memory
+  </p>
 
 </div>
-    <!-- RETURN BUTTON -->
-    <div class="nav-bottom">
-      <button onclick="playClick(); goToPage('page2.html')">
-         ← return to home
-      </button>
-    </div>
 
-  </div>
+
+<div class="section-block">
+
+  <h2>
+    aquarium_log
+  </h2>
+
+  <p style="white-space: pre-line;">
+
+    the room moves slowly.
+
+    light bends through the water.
+
+    old files drift like fish.
+
+    nothing here is rushing.
+
+  </p>
+
+</div>
+
+
+<div class="room-image">
+
+  <img src="https://i.pinimg.com/originals/d1/72/42/d1724245d9cbaa1f066a9c5454072ef2.jpg" alt="A serene underwater scene with soft blue light filtering through the water, creating a tranquil and dreamy atmosphere. The image evokes a sense of calm and peacefulness, as if one is submerged in a quiet aquatic world. The gentle play of light and shadow adds to the ethereal quality of the scene, making it feel like a hidden sanctuary beneath the waves.">
+
+</div>
+
+
+<div class="section-block">
+
+  <h2>
+    current_status
+  </h2>
+
+  <p style="white-space: pre-line;">
+
+    oxygen stable...
+    signal floating...
+    memory preserved...
+
+  </p>
+
+</div>
+
+
+<div class="nav-bottom">
+
+  <button onclick="goToPage('page2.html'); playClick()">
+    ← return to archive
+  </button>
+
+</div>
+
+<!-- 🔊 AUDIO -->
+<audio id="roomMusic" loop>
+  <source src="./music.mp3/notsomuch.mp3" type="audio/mpeg">
+</audio>
+
+<div class="sound-panel">
+
+ <button
+  id="musicToggleButton"
+  onclick="toggleRoomMusic()"
+>
+  🔇 music: OFF
+</button>
+  
+
+</div>
 
    <!-- ⚙️ SCRIPT -->
   <script src="max.js"></script>
