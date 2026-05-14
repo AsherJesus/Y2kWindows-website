@@ -572,3 +572,15 @@ function toggleRoomMusic() {
       "🔇 music: OFF";
   }
 }
+
+function toggleMusic() {
+  const music = document.getElementById("bgMusic");
+  if (!music) return;
+
+  if (music.paused) {
+    music.volume = 0.5;
+    music.play().catch(() => {});
+  } else {
+    music.pause();
+  }
+}
