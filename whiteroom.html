@@ -1,103 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>signal_lost</title>
+  <title>white_room</title>
 
   <link rel="stylesheet" href="DomainExspansion.css">
-
 </head>
 
 <body class="white-room">
 
-  <div id="main-content">
+<div id="main-content">
 
-    <div class="boot-header">
+  <!-- HEADER -->
+  <div class="boot-header">
+    <h1>WHITE_ROOM</h1>
+    <p>empty space • silence • unknown memory</p>
+  </div>
 
-  <h1>
-    WHITE_ROOM
-  </h1>
+  <!-- ROOM LOG -->
+  <div class="section-block">
+    <h2>void_log</h2>
 
-  <p>
-    empty space • silence • unknown memory
-  </p>
+    <p style="white-space: pre-line;">
+the room feels unfinished.
+no sound can be heard here.
+the walls stretch endlessly.
+something was deleted long ago.
+    </p>
+  </div>
 
-</div>
+  <!-- ROOM IMAGE -->
+  <div class="room-image">
+    <img
+      src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/478b2430194103.561767bf5c4ce.jpg"
+      alt="white room"
+    >
+  </div>
 
+  <!-- STATUS -->
+  <div class="section-block">
+    <h2>current_status</h2>
 
-<div class="section-block">
+    <p style="white-space: pre-line;">
+signal weak...
+archive incomplete...
+silence detected...
+    </p>
+  </div>
 
-  <h2>
-    void_log
-  </h2>
+  <!-- MUSIC -->
+  <audio id="roomMusic" loop>
+    <source
+      src="./music.mp3/papulina-waiting-room-for-no-one-485626.mp3"
+      type="audio/mpeg"
+    >
+  </audio>
 
-  <p style="white-space: pre-line;">
+  <div class="sound-panel">
+    <button
+      id="musicToggleButton"
+      onclick="toggleRoomMusic()"
+    >
+      🔇 music: OFF
+    </button>
+  </div>
 
-    the room feels unfinished.
-
-    no sound can be heard here.
-
-    the walls stretch endlessly.
-
-    something was deleted long ago.
-
-  </p>
-
-</div>
-
-
-<div class="room-image">
-
-  <img src="https://images.openai.com/static-rsc-4/0x-22_YOibI7Ep_cpikRt05in9rkdBMyKEYaCGezNiiZBg4nT8LtmdM1BWPDO7BQrqqdSVdy8D9Xw7EetUuyJjzdZjppHuqyxSM67IrRGAohoJ_bBhdqXBPyL4whHnlg2utkG5NsN-i0rU4GeZ9aT4iDF9eFNavbqh-HGZsOyzgqe4sdaemMCEyMUzY-caIs?purpose=fullsize
-  ">
-
-</div>
-
-
-<div class="section-block">
-
-  <h2>
-    current_status
-  </h2>
-
-  <p style="white-space: pre-line;">
-
-    signal weak...
-    archive incomplete...
-    silence detected...
-
-  </p>
-
-</div>
-
-
-<div class="nav-bottom">
-
-  <button onclick="goToPage('page2.html'); playClick()">
-    ← return to archive
-  </button>
+  <!-- RETURN BUTTON -->
+  <div class="nav-bottom">
+    <button onclick="goToPage('page2.html'); playClick()">
+      ← return to archive
+    </button>
+  </div>
 
 </div>
 
-<!-- 🔊 AUDIO -->
-<audio id="roomMusic" loop>
-  <source src="./music.mp3/papulina-waiting-room-for-no-one-485626.mp3" type="audio/mpeg">
-</audio>
+<script src="max.js"></script>
 
-<div class="sound-panel">
-
- <button
-  id="musicToggleButton"
-  onclick="toggleRoomMusic()"
->
-  🔇 music: OFF
-</button>
-
-</div>
-   <!-- ⚙️ SCRIPT -->
-  <script src="max.js"></script>
 </body>
 </html>
