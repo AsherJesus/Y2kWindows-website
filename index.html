@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>window.exe</title>
 
-  <link rel="stylesheet" href="DomainExspansion.css?v=4">
+  <link rel="stylesheet" href="DomainExspansion.css?v=5">
 </head>
 
 <body>
@@ -16,38 +16,36 @@
 
 <div id="main-content">
 
-  <!-- 📼 HERO CARD -->
+  <!-- 📼 HERO IMAGE ONLY -->
   <div class="card" onclick="playClick()">
-
     <img
       class="thumbnail"
       src="https://i.ytimg.com/vi/kweOYIcKZ5o/maxresdefault.jpg"
       alt="window.exe banner"
     >
+  </div>
 
-    <!-- 🔵 TOP BAR -->
-    <div class="top-info">
+  <!-- 🔵 TOP BAR SEPARATE FROM IMAGE -->
+  <div class="system-bar">
 
-      <div class="top-left">
-        <img
-          class="profile"
-          src="profile.jpg"
-          alt="profile"
-        >
+    <div class="top-left">
+      <img
+        class="profile"
+        src="https://images.openai.com/static-rsc-4/dQimTKW6YPAb-D5rZNLMBHE852N8hd3hGCJGnK-Tjb0WTWB4CzES939yr6ojUhnAlKzAsADBviJ0zHwEAZdw_TCLq1LyPUJwuUkqlk4xtIsORE0lNu-LellW43RMBMT9pTLXsfUO0bHRwzcL6xgf-qr9IIAxTsMQ6O-LzVKRqFXNcFxcmvwQgrg5sFmazcMv?purpose=fullsize"
+        alt="profile"
+      >
 
-        <h3 id="profileTitle">window.exe</h3>
-      </div>
+      <h3 id="profileTitle">Digital Memory</h3>
+    </div>
 
     <button
-  id="settingsButton"
-  onclick="toggleSettings(); playClick()"
-  onmouseenter="playHover()"
->
-  <span id="settingsText">
-    ⚙️ SETTINGS.exe
-  </span>
-</button>
-    </div>
+      id="settingsButton"
+      onclick="toggleSettings(); playClick()"
+      onmouseenter="playHover()"
+    >
+      <span id="settingsText">⚙️ Setting.exe</span>
+    </button>
+
   </div>
 
   <!-- 💿 HEADER -->
@@ -58,7 +56,7 @@
 
   <!-- ⚙️ SETTINGS PANEL -->
   <div class="theme-panel" id="settingsPanel">
-    <h2>SETTINGS.exe</h2>
+    <h2>Settings.exe</h2>
 
     <div class="theme-buttons">
       <button onclick="setTheme('xp')">XP BLUE</button>
@@ -67,8 +65,7 @@
       <button onclick="setTheme('red')">ERROR RED</button>
       <button onclick="setTheme('gray')">CRT GRAY</button>
       <button onclick="setTheme('purple')">PURPLE</button>
-       <button onclick="setTheme('cyan')">CYAN</button>
-      
+      <button onclick="setTheme('cyan')">CYAN</button>
     </div>
 
     <h2>LANGUAGE.exe</h2>
@@ -102,7 +99,7 @@
 
     <div class="media-tile">
       <img
-        src="https://i.pinimg.com/originals/db/6c/25/db6c257fbbfb451244070c5b15b4f609.gif"
+        src="https://i.pinimg.com/originals/46/6b/8f/466b8f2b5ae0e475e29f6df55364df2d.jpg"
         alt="static loop"
       >
       <p id="tileThree">static loop #03</p>
@@ -124,26 +121,16 @@
   <!-- 🎮 SOUND PANEL -->
   <div class="sound-panel">
     <button id="musicButton" onclick="toggleMusic()">🎧 music on/off</button>
-    <button id="glitchButton" onclick="playClick()">💥 glitch sound</button>
-  </div>
-
-</div>
+   </div>
 
 <audio id="bgMusic" loop>
-  <source src="./music.mp3/davihugo-think-break-with-amen-break-amen-think-break-457749.mp3" type="audio/mpeg">
+  <source src="./music.mp3/freemusicforvideo-dark-ambient-soundscape-dreamscape-2-524023.mp3" type="audio/mpeg">
 </audio>
 
 <audio id="bootSound">
   <source src="./music.mp3/49447089-game-start-317318.mp3" type="audio/mpeg">
 </audio>
-
-<audio id="clickSound">
-  <source src="glass-break.mp3" type="audio/mpeg">
-</audio>
-
-<audio id="hoverSound">
-  <source src="hover.mp3" type="audio/mpeg">
-</audio>
+</div>
 
 <script src="max.js"></script>
 
