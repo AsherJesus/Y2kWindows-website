@@ -25,75 +25,44 @@
 
     <!-- 📡 HEADER -->
     <div class="boot-header">
-      <h1>SIGNAL LOST</h1>
+  
+      <h1 id="signalTitle">SIGNAL_LOST</h1>
+<p id="signalSubtitle">connection failed • static detected • memory unstable</p>
 
-      <p>
-        transmission interrupted • archive unstable • recovering fragments...
-      </p>
-    </div>
-
-    <div class="media-grid">
-
- <!-- 📡 SIGNAL LOST ROOM -->
-<div class="media-tile"
-  onclick="playClick(); goToPage('signal_lost.html')">
-
-  <img
-    src="https://exploringbits.com/wp-content/uploads/2022/01/Aesthetic-boy-pfp-3-238x300.jpg"
-    alt="signal lost">
-
+<div class="section-block">
+  <h2 id="signalWarningTitle">warning_log</h2>
+  <p id="signalWarningText">
+    The signal was lost before the file could finish loading.
+    Some memories may appear corrupted.
+  </p>
 </div>
 
-    <!-- 💀 SYSTEM LOG -->
-    <div class="section-block">
-
-      <h2>transmission_log</h2>
-
-      <p>
-        signal detected...<br><br>
-
-        source integrity damaged.<br>
-        corrupted fragments recovered.<br><br>
-
-        attempting reconnection...
-      </p>
-
-    </div>
-
-    <!-- 🚀 BACK BUTTON -->
-    <div class="nav-bottom">
-
-      <button
-        onclick="playClick(); goToPage('page2.html')"
-        onmouseenter="playHover()">
-
-        return to archive →
-
-      </button>
-
-    </div>
-
-    <!-- 🎮 SOUND PANEL -->
-    <div class="sound-panel">
-
-      <button onclick="toggleMusic()">
-        🎧 music on/off
-      </button>
+<div class="room-image">
+  <img src="https://images.openai.com/static-rsc-4/QmOwXG0RtPs9QmdwVkPzQP8J_QWMS_X95wOETQa7nKaW5SudNLAa2pE8YYhuaqfV0J2yAvNMv4ZWtWgFG7GDO1BLjjfiSoDJhldinrj4h3ciXQbG8-QGzvqnEK30AEmHWeWnNFA0wlz3H3j1r34MVNUz9x_YCliTE_yeUUm0B4Gy5u6kM5QAw5byKkdOZmUi?purpose=fullsize" alt="signal lost room
+  ">
 </div>
 
-    <!-- 🔊 SOUND EFFECTS -->
-    <audio id="clickSound">
-      <source src="glass-break.mp3" type="audio/mpeg">
-    </audio>
+<div class="nav-bottom">
+  <button onclick="goToPage('page2.html'); playClick()">
+    ← return to archive
+  </button>
+</div>
 
-    <audio id="hoverSound">
-      <source src="hover.mp3" type="audio/mpeg">
-    </audio>
+    </div>
 
     <!-- 🎧 ROOM MUSIC -->
-    <audio id="bgMusic" loop>
-      <source src="ambient.mp3" type="audio/mpeg">
-    </audio>
+  <audio id="roomMusic" loop>
+  <source src="./music.mp3/lifeisnothingelse.mp3" type="audio/mpeg">
+</audio>
+
+<div class="sound-panel">
+
+ <button
+  id="musicToggleButton"
+  onclick="toggleRoomMusic()"
+>
+  🔇 music: OFF
+</button>
 
   </div>
 
