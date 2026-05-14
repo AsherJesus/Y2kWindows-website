@@ -1,103 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>signal_lost</title>
+  <title>window_chair</title>
 
   <link rel="stylesheet" href="DomainExspansion.css">
-
 </head>
 
 <body class="window-chair-room">
 
-  <div id="main-content">
-<div class="boot-header">
+<div id="main-content">
 
-  <h1>
-    WINDOW_CHAIR
-  </h1>
+  <!-- HEADER -->
+  <div class="boot-header">
+    <h1>WINDOW_CHAIR</h1>
+    <p>soft rain • desktop glow • late night thoughts</p>
+  </div>
 
-  <p>
-    soft rain • desktop glow • late night thoughts
-  </p>
+  <!-- ROOM LOG -->
+  <div class="section-block">
+    <h2>room_log</h2>
 
-</div>
+    <p style="white-space: pre-line;">
+The room feels quiet tonight.
+The monitor is still warm.
+Rain taps against the window.
+Nobody is online anymore.
+    </p>
+  </div>
 
+  <!-- ROOM IMAGE -->
+  <div class="room-image">
+    <img
+      src="https://images.openai.com/static-rsc-4/0z1YdP9Bc_8T5zoKdl5RRZXfaEorf9r6v3NY42S__WGp9GpsiauOHfUS0_hdlIQiY-N1FWujEsHMpQ6eeB6i43g75Tr9Z-Zz_sb6gSoCOwuhKPvp9oblWlkN3pQGV2EDC6UrIEVPQGncN3x5bAwQEpe6UsZZjN7VZWCwjMar_sX-Ur54x_P7V5tLji0d-_q5?purpose=fullsize"
+      alt="window chair room"
+    >
+  </div>
 
-<div class="section-block">
+  <!-- STATUS -->
+  <div class="section-block">
+    <h2>current_status</h2>
 
-  <h2>
-    room_log
-  </h2>
+    <p style="white-space: pre-line;">
+music playing...
+connection stable...
+memory archived...
+    </p>
+  </div>
 
-  <p style="white-space: pre-line;">
+  <!-- MUSIC -->
+  <audio id="roomMusic" loop>
+    <source src="./music.mp3/uncertain.mp3" type="audio/mpeg">
+  </audio>
 
-    The room feels quiet tonight.
+  <div class="sound-panel">
+    <button
+      id="musicToggleButton"
+      onclick="toggleRoomMusic()"
+    >
+      🔇 music: OFF
+    </button>
+  </div>
 
-    The monitor is still warm.
-
-    rain taps against the window.
-
-    Nobody is online anymore.
-
-  </p>
-
-</div>
-
-
-<div class="room-image">
-
-  <img src="https://images.openai.com/static-rsc-4/0z1YdP9Bc_8T5zoKdl5RRZXfaEorf9r6v3NY42S__WGp9GpsiauOHfUS0_hdlIQiY-N1FWujEsHMpQ6eeB6i43g75Tr9Z-Zz_sb6gSoCOwuhKPvp9oblWlkN3pQGV2EDC6UrIEVPQGncN3x5bAwQEpe6UsZZjN7VZWCwjMar_sX-Ur54x_P7V5tLji0d-_q5?purpose=fullsize">
-
-</div>
-
-
-<div class="section-block">
-
-  <h2>
-    current_status
-  </h2>
-
-  <p>
-
-    music playing...
-    connection stable...
-    memory archived...
-
-  </p>
-
-</div>
-
-
-<div class="nav-bottom">
-
-  <button
-    onclick="goToPage('page2.html'); playClick()"
-  >
-    ← return to archive
-  </button>
-
-</div>
-   <!-- 🔊 AUDIO -->
-<audio id="roomMusic" loop>
-  <source src="./music.mp3/uncertain.mp3" type="audio/mpeg">
-</audio>
-
-<div class="sound-panel">
-
-  <button
-  id="musicToggleButton"
-  onclick="toggleRoomMusic()"
->
-  🔇 music: OFF
-</button>
+  <!-- RETURN BUTTON -->
+  <div class="nav-bottom">
+    <button onclick="goToPage('page2.html'); playClick()">
+      ← return to archive
+    </button>
+  </div>
 
 </div>
 
-   <!-- ⚙️ SCRIPT -->
-  <script src="max.js"></script>
+<script src="max.js"></script>
+
 </body>
 </html>
