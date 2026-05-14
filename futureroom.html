@@ -5,37 +5,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>signal_lost</title>
+  <title>Future Room</title>
 
   <link rel="stylesheet" href="DomainExspansion.css">
 
 </head>
 
-<body class="futureroom">
+<body class="future-room">
 
   <div id="main-content">
 
     <div class="boot-header">
-      <h1>FUTURE ROOM</h1>
-      <p>quiet archive • static memory • isolated space</p>
-    </div>
 
-   <!-- 🪟 WINDOW CHAIR ROOM -->
-<div class="media-tile"
-  onclick="playClick(); goToPage('futureroom.html')">
+  <h1>
+    FUTURE_ROOM
+  </h1>
 
-  <img
-    src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/478b2430194103.561767bf5c4ce.jpg">
-    
+  <p>
+    cyber atmosphere • digital ocean • future signal
+  </p>
+
 </div>
-    <!-- RETURN BUTTON -->
-    <div class="nav-bottom">
-      <button onclick="playClick(); goToPage('page2.html')">
-         ← return to home
-      </button>
-    </div>
 
+
+<div class="section-block">
+
+  <h2>
+    system_scan
+  </h2>
+
+  <p style="white-space: pre-line;">
+
+    scanning future archives...
+
+    Network synchronization complete.
+
+    Memory transfer stable.
+
+    Welcome to the next system.
+
+  </p>
+
+</div>
+
+
+<div class="room-image">
+
+  <img src="https://images.openai.com/static-rsc-4/6kLC_cmGwca9wEto6GFhx5tqi0BO_GW9IR57p2QZrX6zU0btUUUWQ2tga8GqsrwX3hvgPGmXPYxw3Tx9H3F5PhuAB1lVhhtnH__-fG6KgT4CmevBXM0aCjfnIzB_xJaz30brOs_3nbG7Y1Vc898KUxnCwCP1ZCeTjp93ACONCH9RN_vhsgHd9NXpCUqISs6H?purpose=fullsize">
+
+</div>
+
+
+<div class="section-block">
+
+  <h2>
+    current_status
+  </h2>
+
+  <p style="white-space: pre-line;">
+
+    cyber link active...
+    future network online...
+    archive evolution complete...
+
+  </p>
+
+</div>
+
+
+<div class="nav-bottom">
+
+  <button onclick="goToPage('page2.html'); playClick()">
+    ← return to archive
+  </button>
+
+</div>
   </div>
+
+  <!-- 🔊 AUDIO -->
+<audio id="roomMusic" loop>
+  <source src="./music.mp3/alanajordan-art-house-instrumental-01-436151.mp3" type="audio/mpeg">
+</audio>
+
+<div class="sound-panel">
+<button
+  id="musicToggleButton"
+  onclick="toggleRoomMusic()"
+>
+  🔇 music: OFF
+</button>
+
+</div>
 
    <!-- ⚙️ SCRIPT -->
   <script src="max.js"></script>
