@@ -11,32 +11,91 @@
 
 </head>
 
-<body class="aestheticroom">
+<body class="aesthetic-room">
 
   <div id="main-content">
+<div class="boot-header">
 
-    <div class="boot-header">
-      <h1>AESTHETIC ROOM</h1>
-      <p>quiet archive • static memory • isolated space</p>
-    </div>
+  <h1>
+    AESTHETIC_ROOM
+  </h1>
 
-   <!-- 🪟 WINDOW CHAIR ROOM -->
-<div class="media-tile"
-  onclick="playClick(); goToPage('aestheticroom.html')">
-
-  <img
-    src="https://f4.bcbits.com/img/a0095916694_5.jpg"
-    alt="window chair room">
+  <p>
+    dream state • purple glow • emotional archive
+  </p>
 
 </div>
-    <!-- RETURN BUTTON -->
-    <div class="nav-bottom">
-      <button onclick="playClick(); goToPage('page2.html')">
-         ← return to home
-      </button>
-    </div>
 
-  </div>
+
+<div class="section-block">
+
+  <h2>
+    dream_log
+  </h2>
+
+  <p style="white-space: pre-line;">
+
+    some memories feel softer here.
+
+    the screen glow never fades.
+
+    music echoes through empty tabs.
+
+    time moves slower in this room.
+
+  </p>
+
+</div>
+
+
+<div class="room-image">
+
+  <img src="https://th.bing.com/th/id/OIP.2azxHeOOS18NWYP1iSgYegHaKV?w=184&h=257&c=7&r=0&o=7&pid=1.7&rm=3">
+
+</div>
+
+
+<div class="section-block">
+
+  <h2>
+    current_status
+  </h2>
+
+  <p style="white-space: pre-line;">
+
+    ambient music active...
+    emotional archive loaded...
+    night mode enabled...
+
+  </p>
+
+</div>
+
+
+<div class="nav-bottom">
+
+  <button onclick="goToPage('page2.html'); playClick()">
+    ← return to archive
+  </button>
+
+  
+</div>
+
+<!-- 🔊 AUDIO -->
+<audio id="roomMusic" loop>
+  <source src="./music.mp3/papulina-safety-glass-485624.mp3" type="audio/mpeg">
+</audio>
+
+<div class="sound-panel">
+
+  <button
+  id="musicToggleButton"
+  onclick="toggleRoomMusic()"
+>
+  🔇 music: OFF
+</button>
+
+</div>
 
    <!-- ⚙️ SCRIPT -->
   <script src="max.js"></script>
