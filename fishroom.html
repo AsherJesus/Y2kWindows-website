@@ -1,104 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>signal_lost</title>
+  <title>fish_room</title>
 
   <link rel="stylesheet" href="DomainExspansion.css">
-
 </head>
 
 <body class="fish-room">
 
-  <div id="main-content">
+<div id="main-content">
 
-   <div class="boot-header">
+  <!-- HEADER -->
+  <div class="boot-header">
+    <h1>FISH_ROOM</h1>
+    <p>water light • quiet bubbles • soft blue memory</p>
+  </div>
 
-  <h1>
-    FISH_ROOM
-  </h1>
+  <!-- ROOM LOG -->
+  <div class="section-block">
+    <h2>aquarium_log</h2>
 
-  <p>
-    water light • quiet bubbles • soft blue memory
-  </p>
+    <p style="white-space: pre-line;">
+the room moves slowly.
+light bends through the water.
+old files drift like fish.
+nothing here is rushing.
+    </p>
+  </div>
 
-</div>
+  <!-- ROOM IMAGE -->
+  <div class="room-image">
+    <img
+      src="https://i.pinimg.com/originals/d1/72/42/d1724245d9cbaa1f066a9c5454072ef2.jpg"
+      alt="fish room"
+    >
+  </div>
 
+  <!-- STATUS -->
+  <div class="section-block">
+    <h2>current_status</h2>
 
-<div class="section-block">
+    <p style="white-space: pre-line;">
+oxygen stable...
+signal floating...
+memory preserved...
+    </p>
+  </div>
 
-  <h2>
-    aquarium_log
-  </h2>
+  <!-- MUSIC -->
+  <audio id="roomMusic" loop>
+    <source src="./music.mp3/notsomuch.mp3" type="audio/mpeg">
+  </audio>
 
-  <p style="white-space: pre-line;">
+  <div class="sound-panel">
+    <button
+      id="musicToggleButton"
+      onclick="toggleRoomMusic()"
+    >
+      🔇 music: OFF
+    </button>
+  </div>
 
-    the room moves slowly.
-
-    light bends through the water.
-
-    old files drift like fish.
-
-    nothing here is rushing.
-
-  </p>
-
-</div>
-
-
-<div class="room-image">
-
-  <img src="https://i.pinimg.com/originals/d1/72/42/d1724245d9cbaa1f066a9c5454072ef2.jpg" alt="A serene underwater scene with soft blue light filtering through the water, creating a tranquil and dreamy atmosphere. The image evokes a sense of calm and peacefulness, as if one is submerged in a quiet aquatic world. The gentle play of light and shadow adds to the ethereal quality of the scene, making it feel like a hidden sanctuary beneath the waves.">
-
-</div>
-
-
-<div class="section-block">
-
-  <h2>
-    current_status
-  </h2>
-
-  <p style="white-space: pre-line;">
-
-    oxygen stable...
-    signal floating...
-    memory preserved...
-
-  </p>
-
-</div>
-
-
-<div class="nav-bottom">
-
-  <button onclick="goToPage('page2.html'); playClick()">
-    ← return to archive
-  </button>
+  <!-- RETURN BUTTON -->
+  <div class="nav-bottom">
+    <button onclick="goToPage('page2.html'); playClick()">
+      ← return to archive
+    </button>
+  </div>
 
 </div>
 
-<!-- 🔊 AUDIO -->
-<audio id="roomMusic" loop>
-  <source src="./music.mp3/notsomuch.mp3" type="audio/mpeg">
-</audio>
+<script src="max.js"></script>
 
-<div class="sound-panel">
-
- <button
-  id="musicToggleButton"
-  onclick="toggleRoomMusic()"
->
-  🔇 music: OFF
-</button>
-  
-
-</div>
-
-   <!-- ⚙️ SCRIPT -->
-  <script src="max.js"></script>
 </body>
 </html>
