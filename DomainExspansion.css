@@ -501,79 +501,88 @@ body::after {
 
 /* -------------------- PHONES -------------------- */
 @media screen and (max-width: 768px) {
-  .top-info {
-    flex-direction: column;
-    text-align: center;
-  }
+.top-info {
+  flex-direction: column;
+  text-align: center;
+}
 
-  .top-info h3 {
-    font-size: 1.1rem;
-  }
+.top-info h3 {
+  font-size: 1.1rem;
+}
 
-  .thumbnail {
-    height: 140px;
-  }
+.thumbnail {
+  height: 320px;
+  object-fit: cover;
+}
 
-  .glitch {
-    font-size: 1.3rem;
-    text-align: center;
-    padding: 10px;
-  }
+.card {
+  margin-top: 10px;
+}
 
-  .boot-header {
-    padding: 10px;
-  }
+.system-bar {
+  margin-top: 12px;
+}
 
-  .boot-header h1 {
-    font-size: 1.5rem;
-  }
+.glitch {
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 10px;
+}
 
-  .boot-header p {
-    font-size: 0.8rem;
-  }
+.boot-header {
+  padding: 10px;
+}
 
-  .media-grid {
-    grid-template-columns: 1fr;
-    padding: 15px;
-    gap: 20px;
-  }
+.boot-header h1 {
+  font-size: 1.5rem;
+}
 
-  .media-tile {
-    width: 100%;
-    max-width: 340px;
-    aspect-ratio: 16 / 10;
-    margin: 0 auto;
-  }
+.boot-header p {
+  font-size: 0.8rem;
+}
 
-  .section-block {
-    width: 92%;
-    padding: 15px;
-  }
+.media-grid {
+  grid-template-columns: 1fr;
+  padding: 15px;
+  gap: 20px;
+}
 
-  .sound-panel,
-  .theme-panel {
-    width: 85%;
-  }
+.media-tile {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 16 / 10;
+  margin: 0 auto;
+}
 
-  .nav-bottom button,
-  .sound-panel button,
-  .theme-buttons button {
-    width: 100%;
-    font-size: 0.8rem;
-  }
+.section-block {
+  width: 92%;
+  padding: 15px;
+}
 
-  .entity-grid {
-    gap: 20px;
-  }
+.sound-panel,
+.theme-panel {
+  width: 85%;
+}
 
-  .entity {
-    width: 90px;
-  }
+.nav-bottom button,
+.sound-panel button,
+.theme-buttons button {
+  width: 100%;
+  font-size: 0.8rem;
+}
 
-  .entity img {
-    width: 75px;
-    height: 75px;
-  }
+.entity-grid {
+  gap: 20px;
+}
+
+.entity {
+  width: 90px;
+}
+
+.entity img {
+  width: 75px;
+  height: 75px;
+}
 }
 
 /* -------------------- SMALL PHONES -------------------- */
