@@ -62,7 +62,7 @@ body {
 
 .thumbnail {
   width: 100%;
-  max-height: 260px;
+  max-height: 700px;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -510,8 +510,9 @@ body::after {
     margin: 0 auto;
   }
 
-  .thumbnail {
-    width: 100%;
+ .thumbnail {
+    margin-left: -18px;
+    width: 111%;
     height: 140px;
     object-fit: cover;
     object-position: center;
