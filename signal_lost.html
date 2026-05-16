@@ -7,12 +7,13 @@
 
   <title>signal_lost</title>
 
-  <link rel="stylesheet" href="DomainExspansion.css">
+  <link rel="stylesheet" href="DomainExspansion.css?v=7">
 </head>
 
 <body class="signal-room">
 
-    <div class="visual-bg">
+<div class="visual-bg">
+
   <!-- 🔥 LOADER -->
   <div id="loader">
     <h1 class="glitch" data-text="signal lost...">
@@ -25,48 +26,58 @@
 
     <!-- 📡 HEADER -->
     <div class="boot-header">
-  
       <h1 id="signalTitle">SIGNAL_LOST</h1>
-<p id="signalSubtitle">connection failed • static detected • memory unstable</p>
 
-<div class="section-block">
-  <h2 id="signalWarningTitle">warning_log</h2>
-  <p id="signalWarningText">
-    The signal was lost before the file could finish loading.
-    Some memories may appear corrupted.
-  </p>
-</div>
+      <p id="signalSubtitle">
+        connection failed • static detected • memory unstable
+      </p>
+    </div>
 
- <audio id="roomMusic" loop>
-  <source src="./music.mp3/lifeisnothingelse-[AudioTrimmer.com].mp3" type="audio/mpeg">
-</audio>
+    <!-- ⚠️ WARNING LOG -->
+    <div class="section-block">
+      <h2 id="signalWarningTitle">warning_log</h2>
 
-<div class="nav-bottom">
-  <button onclick="goToPage('page2.html'); playClick()">
-    ← return to archive
-  </button>
-</div>
+      <p id="signalWarningText">
+        the signal was lost before the file could finish loading.
+        some memories may appear corrupted.
+      </p>
+    </div>
 
+    <!-- 🖼️ ROOM IMAGE -->
+    <div class="room-image">
+      <img
+        src="https://images.openai.com/static-rsc-4/QmOwXG0RtPs9QmdwVkPzQP8J_QWMS_X95wOETQa7nKaW5SudNLAa2pE8YYhuaqfV0J2yAvNMv4ZWtWgFG7GDO1BLjjfiSoDJhldinrj4h3ciXQbG8-QGzvqnEK30AEmHWeWnNFA0wlz3H3j1r34MVNUz9x_YCliTE_yeUUm0B4Gy5u6kM5QAw5byKkdOZmUi?purpose=fullsize"
+        alt="signal lost room"
+      >
+    </div>
+
+    <!-- 🔘 RETURN BUTTON -->
+    <div class="nav-bottom">
+      <button onclick="goToPage('page2.html'); playClick()">
+        ← return to archive
+      </button>
     </div>
 
     <!-- 🎧 ROOM MUSIC -->
-  <audio id="roomMusic" loop>
-  <source src="music/life.mp3" type="audio/mpeg">
-</audio>
+    <audio id="roomMusic" loop>
+      <source src="music/life.mp3" type="audio/mpeg">
+    </audio>
 
-<div class="sound-panel">
-
- <button
-  id="musicToggleButton"
-  onclick="toggleRoomMusic()"
->
-  🔇 music: OFF
-</button>
+    <div class="sound-panel">
+      <button
+        id="musicToggleButton"
+        onclick="toggleRoomMusic()"
+      >
+        🔇 music: OFF
+      </button>
+    </div>
 
   </div>
 
-  <!-- ⚙️ SCRIPT -->
-  <script src="max.js"></script>
+</div>
+
+<!-- ⚙️ SCRIPT -->
+<script src="max.js?v=7"></script>
 
 </body>
 </html>
