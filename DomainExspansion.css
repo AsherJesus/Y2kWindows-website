@@ -1,688 +1,83 @@
-:root {
-  /* WINDOW.EXE DEFAULT THEME — XP BLUE */
-  --bg-color: #071a4a;
-  --window-color: rgba(10, 45, 130, 0.75);
-  --panel-color: rgba(0, 20, 70, 0.75);
-  --text-color: #ffffff;
-  --accent-color: #00d9ff;
-  --accent-hover: #b6ff00;
-  --border-color: #00d9ff;
-  --shadow-color: rgba(0, 217, 255, 0.35);
-}
-
-/* -------------------- RESET / BASE -------------------- */
-body {
-  margin: 0;
-  background: var(--bg-color);
-  color: var(--text-color);
-  font-family: "Courier New", monospace;
-  overflow-x: hidden;
-}
-
-/* -------------------- HEADER TEXT -------------------- */
-.content {
-  text-align: center;
-  padding: 20px;
-}
-
-/* -------------------- LOADER -------------------- */
-#loader {
-  position: fixed;
-  inset: 0;
-  background: var(--bg-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-/* -------------------- GLITCH TEXT -------------------- */
-.glitch {
-  font-size: 2rem;
-  color: var(--accent-color);
-  text-shadow:
-    2px 0 red,
-    -2px 0 blue;
-  animation: glitch 0.8s infinite;
-}
-
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(2px, -2px); }
-  60% { transform: translate(-1px, 1px); }
-  80% { transform: translate(1px, -1px); }
-  100% { transform: translate(0); }
-}
-
-/* -------------------- BANNER -------------------- */
-.card {
-  width: 100%;
-}
-
-.thumbnail {
-  width: 100%;
-  height: clamp(260px, 55vw, 650px);
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-/* -------------------- PROFILE -------------------- */
-.top-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 15px 20px;
-  background: var(--window-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.profile {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 2px solid var(--accent-color);
-}
-
-.top-info h3 {
-  color: var(--accent-color);
-  font-size: 1.5rem;
-}
-
-/* -------------------- HEADER -------------------- */
-.boot-header {
-  text-align: center;
-  margin-top: 40px;
-  padding: 10px;
-}
-
-.boot-header h1 {
-  letter-spacing: 4px;
-  color: var(--accent-color);
-}
-
-.boot-header p {
-  opacity: 0.8;
-}
-
-/* -------------------- MEDIA GRID -------------------- */
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 30px;
-  padding: 40px;
-  width: 90%;
-  margin: auto;
-}
-
-.media-grid1 {
- 
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 40px;
-  width: 90%;
-  margin: auto;
-}
-
-/* -------------------- MEDIA TILE -------------------- */
-/* ========================= */
-/* OUTSIDE ROOM CARDS */
-/* ========================= */
-
-.media-tile {
-
-  width: 100%;
-
-  margin: auto;
-
-  aspect-ratio: 16 / 10;
-
-  border-radius: 20px;
-
-  overflow: hidden;
-
-  border: 2px solid var(--border-color);
-
-  background: var(--panel-color);
-
-  cursor: pointer;
-
-  transition: 0.3s ease;
-
-  box-shadow:
-    0 0 8px var(--shadow-color);
-}
-
-
-.media-tile img {
-
-  width: 100%;
-
-  height: 100%;
-
-  object-fit: cover;
-
-  object-position: center;
-
-  display: block;
-
-  transition: 0.3s ease;
-
-  pointer-events: none;
-}
-
-
-/* ========================= */
-/* INSIDE ROOM IMAGES */
-/* ========================= */
-
-.room-image {
-
-  aspect-ratio: 1 / 1;
-
-  width: 20%;
-
-  margin: auto;
-
-  border-radius: 20px;
-
-  overflow: hidden;
-
-  border: 2px solid var(--border-color);
-
-  background: var(--panel-color);
-
-  box-shadow:
-    0 0 8px var(--shadow-color);
-}
-
-
-.room-image img {
-
-  width: 100%;
-
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  object-position: center;
-}
-
-
-/* ========================= */
-/* HOVER EFFECT */
-/* ========================= */
-
-.media-tile:hover {
-
-  transform: scale(1.02);
-
-  box-shadow:
-    0 0 20px var(--accent-color);
-}
-/* -------------------- HOVER -------------------- */
-.media-tile:hover {
-  transform: scale(1.03);
-  border-color: var(--accent-hover);
-  box-shadow:
-    0 0 10px var(--accent-color),
-    0 0 20px var(--accent-hover);
-}
-
-.media-tile:hover img {
-  transform: scale(1.04);
-}
-
-/* -------------------- CLICK SHAKE -------------------- */
-.media-tile:active {
-  animation: glitchShake 0.2s;
-}
-
-@keyframes glitchShake {
-  0% { transform: translate(0); }
-  25% { transform: translate(2px, -2px); }
-  50% { transform: translate(-2px, 2px); }
-  75% { transform: translate(1px, -1px); }
-  100% { transform: translate(0); }
-}
-
-/* -------------------- NAV BUTTON -------------------- */
-.nav-bottom {
-  display: flex;
-  justify-content: center;
-  margin: 60px 0 30px;
-}
-
-.nav-bottom button {
-  background: var(--panel-color);
-  color: var(--accent-color);
-  border: 1px solid var(--border-color);
-  padding: 12px 22px;
-  cursor: pointer;
-  font-family: monospace;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: 0.2s;
-}
-
-.nav-bottom button:hover {
-  background: var(--accent-color);
-  color: black;
-  box-shadow: 0 0 10px var(--accent-color);
-}
-
-.nav-bottom button:active {
-  transform: scale(0.95);
-}
-
-/* -------------------- SOUND PANEL -------------------- */
-.sound-panel {
-  margin: 40px auto;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: fit-content;
-  background: var(--panel-color);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 0 10px var(--shadow-color);
-}
-
-.sound-panel button {
-  background: var(--bg-color);
-  color: var(--accent-color);
-  border: 1px solid var(--border-color);
-  padding: 10px;
-  cursor: pointer;
-  font-family: monospace;
-  transition: 0.2s;
-}
-
-.sound-panel button:hover {
-  background: var(--accent-color);
-  color: black;
-}
-
-/* -------------------- THEME SETTINGS PANEL -------------------- */
-.theme-panel {
-  width: fit-content;
-  margin: 30px auto;
-  padding: 15px;
-  background: var(--panel-color);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 0 12px var(--shadow-color);
-  text-align: center;
-}
-
-.theme-panel h2 {
-  margin-top: 0;
-  color: var(--accent-color);
-  letter-spacing: 2px;
-}
-
-.theme-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.theme-buttons button {
-  background: var(--bg-color);
-  color: var(--accent-color);
-  border: 1px solid var(--border-color);
-  padding: 10px 14px;
-  cursor: pointer;
-  font-family: monospace;
-  text-transform: uppercase;
-  transition: 0.2s;
-}
-
-.theme-buttons button:hover {
-  background: var(--accent-color);
-  color: black;
-  box-shadow: 0 0 10px var(--accent-color);
-}
-
-/* -------------------- SECTION BLOCK -------------------- */
-.section-block {
-  width: 85%;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
-  border: 1px solid var(--border-color);
-  background: var(--panel-color);
-  box-shadow: 0 0 10px var(--shadow-color);
-}
-
-.section-block h2 {
-  margin-bottom: 20px;
-  color: var(--accent-color);
-  letter-spacing: 2px;
-}
-
-/* -------------------- CONTACT -------------------- */
-.contact-section {
-  width: 80%;
-  margin: 100px auto 40px;
-  text-align: center;
-}
-
-/* -------------------- ENTITY GRID -------------------- */
-.entity-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
-
-.entity {
-  width: 120px;
-  text-align: center;
-}
-
-.entity img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 2px solid var(--accent-color);
-  object-fit: cover;
-  transition: 0.3s;
-}
-
-.entity img:hover {
-  transform: scale(1.08);
-  box-shadow:
-    0 0 10px var(--accent-color),
-    0 0 20px var(--accent-hover);
-}
-
-.entity p {
-  margin-top: 10px;
-  color: var(--accent-color);
-  font-size: 0.8rem;
-}
-
-/* -------------------- VHS / CRT EFFECT -------------------- */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(255,255,255,0.01),
-    rgba(255,255,255,0.01) 1px,
-    transparent 2px,
-    transparent 4px
-  );
-  z-index: 9998;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: rgba(0,255,200,0.01);
-  mix-blend-mode: overlay;
-  animation: crtFlicker 4s infinite;
-  z-index: 9997;
-}
-
-@keyframes crtFlicker {
-  0%, 100% { opacity: 0.04; }
-  50% { opacity: 0.08; }
-}
-
-/* -------------------- ROOMS -------------------- */
-.signal-room::before,
-.window-chair-room::before,
-.fish-room::before,
-.aesthetic-room::before,
-.white-room::before,
-.future-room::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  z-index: -1;
-}
-
-.signal-room::before {
-  background-image: url("https://images.openai.com/static-rsc-4/zfb2WFupNZ7DmgnWCTPPhdyH5EMbAiwEJ9_WTGSto5RObc-PmnBHhI5CkCbsIQzOuAlqqc0JYubRZ0rXcQJxV8D8cSBOENIcT9Id3n4gEAgvGGngxI5G8dP-NrYkPoByAq1rIFRofL1yCW5oc0Bw0gieTXpv5IpJDmvi9rzf-PObGiNE78D8VLPYF2Yxf3qw?purpose=fullsize");
-}
-
-.window-chair-room::before {
-  background-image: url("https://images.openai.com/static-rsc-4/s7k298BjlLK4zxzuL86MgQyEyK_HfqxrKTQN6oI77YVcv_wawIBBDl7CwH6QaLbkkZWry6oZarfjxDcGcBillHoQhhTmHgjn00bvk3jioTi2pIb8fxryGRffexwvP9hN3AZkjqfMVZpy7P1j8wWBdDJ4Bmz3v-EZxXuqznqmPKJVrp8U1z5lzXyj1sYxc-qr?purpose=fullsize");
-}
-
-.fish-room::before {
-  background-image: url("https://images.openai.com/static-rsc-4/Vju95uKK_TQLgbmMCKdCJ8ocCuzL4YcOu1PDCo6hywCtVlwzsniN9CS58_aLVW-nDjWr3MUkIs1NsUVgZRVQg86aEYvA2-hr-I3yCbP14OVSU9D6gFFxewIuaUyltZTFu8eTGkY7H4E6uSGV_vCjgg86oi5rhPOcSX1XlszeDX4Z8EiNIRWz6gmeWWLrtQom?purpose=fullsize");
-}
-
-.aesthetic-room::before {
-  background-image: url("https://images.openai.com/static-rsc-4/nKgbi_L8QqdbQKYQKhTRBuMSuEyEfQmqncj6lx69fgLdLoOw92eWzygb2HTO2JZbqkg_gRCZjISSL6aynnqngnkF1eUDn8MKEYelmhy6qlDdWuD5JqseC905C6zYOyVaueeD_qAkitsml7iHdz92URiQwFgfAOuEWLUNox3J2mSANWjiqE8-ePDmoI1K_I_t?purpose=fullsize");
-}
-
-.white-room::before {
-  background-image: url("https://images.openai.com/static-rsc-4/V1ZgKG8C4i7cG81PWfG7Z5AmRfDIvKX7nI8FU8E5Wpdw1UNR10vRjrW5ZGWPbn_xMOm3lPmtxc9ZC-f-q9QRsHIAKzQjxbwpTg1sT4Bj8FucTtPf-beu5wM35WAHyHg4kBlGqfRJ5P4GFlLS4zKSOovu65O9PdqU3JQZvgt-5bNmPGcwUB0olAGAudRkWXFb?purpose=fullsize");
-}
-
-.future-room::before {
-  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20240619/pngtree-blue-light-grid-pattern-cyber-room-background-with-computer-image_15894655.jpg");
-}
-/* -------------------- TABLETS -------------------- */
-@media screen and (max-width: 1024px) {
-  .thumbnail {
-    height: 400px;
-  }
-
-  .media-grid {
-    gap: 30px;
-    padding: 30px;
-  }
-
-  .media-tile {
-    width: 280px;
-    height: 240px;
-  }
-
-  .section-block {
-    width: 90%;
-  }
-}
-
-/* -------------------- PHONES -------------------- */
-@media screen and (max-width: 768px) {
-.top-info {
-  flex-direction: column;
-  text-align: center;
-}
-
-.top-info h3 {
-  font-size: 1.1rem;
-}
-
-.top-left {
-  margin-left: 8px;
-}
-
-.card {
-  width: 90%;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.thumbnail {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  display: block;
-}
-.system-bar {
-  margin-top: 10px;
-}
-
-.glitch {
-  font-size: 1.3rem;
-  text-align: center;
-  padding: 10px;
-}
-
-.boot-header {
-  padding: 10px;
-}
-
-.boot-header h1 {
-  font-size: 1.5rem;
-}
-
-.boot-header p {
-  font-size: 0.8rem;
-}
-
-.media-grid {
-  grid-template-columns: 1fr;
-  padding: 15px;
-  gap: 20px;
-}
-
-.media-tile {
-  width: 100%;
-  max-width: 340px;
-  aspect-ratio: 16 / 10;
-  margin: 0 auto;
-}
-
-.section-block {
-  width: 92%;
-  padding: 15px;
-}
-
-.sound-panel,
-.theme-panel {
-  width: 85%;
-}
-
-.nav-bottom button,
-.sound-panel button,
-.theme-buttons button {
-  width: 100%;
-  font-size: 0.8rem;
-}
-
-.entity-grid {
-  gap: 20px;
-}
-
-.entity {
-  width: 90px;
-}
-
-.entity img {
-  width: 75px;
-  height: 75px;
-}
-}
-
-/* -------------------- SMALL PHONES -------------------- */
-@media screen and (max-width: 480px) {
-  .media-tile {
-    width: 95%;
-    height: 190px;
-  }
-
-  .glitch {
-    font-size: 1rem;
-  }
-
-  .boot-header h1 {
-    font-size: 1.1rem;
-  }
-
-  .boot-header p {
-    font-size: 0.7rem;
-  }
-
-  .entity img {
-    width: 65px;
-    height: 65px;
-  }
-
-  .sound-panel,
-  .theme-panel {
-    width: 90%;
-  }
-}
-
-#settingsPanel {
-  display: none;
-}
-
-/* -------------------- TOP BAR SETTINGS -------------------- */
-
-.system-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin-top: 0px;
-  padding: 15px 20px;
-
-  background: var(--window-color);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-/* LEFT SIDE */
-
-.top-left {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-}
-
-
-/* SETTINGS BUTTON */
-
-#settingsButton {
-
-  background: var(--panel-color);
-
-  color: var(--accent-color);
-
-  border:
-    1px solid var(--border-color);
-
-  padding: 10px 14px;
-
-  font-family: monospace;
-
-  font-size: 0.85rem;
-
-  cursor: pointer;
-
-  transition: 0.2s ease;
-
-  box-shadow:
-    0 0 10px var(--shadow-color);
-}
-
-#settingsButton:hover {
-
-  background: var(--accent-color);
-
-  color: black;
-
-  transform: scale(1.03);
-}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>signal_lost</title>
+
+  <link rel="stylesheet" href="DomainExspansion.css?v=7">
+</head>
+
+<body class="signal-room">
+
+<div class="visual-bg">
+
+  <!-- 🔥 LOADER -->
+  <div id="loader">
+    <h1 class="glitch" data-text="signal lost...">
+      signal lost...
+    </h1>
+  </div>
+
+  <!-- 🧠 MAIN CONTENT -->
+  <div id="main-content">
+
+    <!-- 📡 HEADER -->
+    <div class="boot-header">
+      <h1 id="signalTitle">SIGNAL_LOST</h1>
+
+      <p id="signalSubtitle">
+        connection failed • static detected • memory unstable
+      </p>
+    </div>
+
+    <!-- ⚠️ WARNING LOG -->
+    <div class="section-block">
+      <h2 id="signalWarningTitle">warning_log</h2>
+
+      <p id="signalWarningText">
+        the signal was lost before the file could finish loading.
+        some memories may appear corrupted.
+      </p>
+    </div>
+
+    <!-- 🖼️ ROOM IMAGE -->
+    <div class="room-image">
+      <img
+        src="https://images.openai.com/static-rsc-4/QmOwXG0RtPs9QmdwVkPzQP8J_QWMS_X95wOETQa7nKaW5SudNLAa2pE8YYhuaqfV0J2yAvNMv4ZWtWgFG7GDO1BLjjfiSoDJhldinrj4h3ciXQbG8-QGzvqnEK30AEmHWeWnNFA0wlz3H3j1r34MVNUz9x_YCliTE_yeUUm0B4Gy5u6kM5QAw5byKkdOZmUi?purpose=fullsize"
+        alt="signal lost room"
+      >
+    </div>
+
+    <!-- 🔘 RETURN BUTTON -->
+    <div class="nav-bottom">
+      <button onclick="goToPage('page2.html'); playClick()">
+        ← return to archive
+      </button>
+    </div>
+
+    <!-- 🎧 ROOM MUSIC -->
+    <audio id="roomMusic" loop>
+      <source src="music/life.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="sound-panel">
+      <button
+        id="musicToggleButton"
+        onclick="toggleRoomMusic()"
+      >
+        🔇 music: OFF
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ⚙️ SCRIPT -->
+<script src="max.js?v=7"></script>
+
+</body>
+</html>
