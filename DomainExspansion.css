@@ -511,7 +511,7 @@ body::after {
   }
 
  .thumbnail {
-    margin-left: -20px;
+    margin-left: -18px;
     width: 110%;
     height: 140px;
     object-fit: cover;
